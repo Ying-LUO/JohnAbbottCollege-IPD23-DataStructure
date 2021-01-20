@@ -48,3 +48,7 @@ Thumbs.db
 *.mov
 *.wmv
 
+/Day01Arrays/nbproject/private/
+/Day01Arrays/build/
+/Day02TwoDimArrays/nbproject/private/
+/Day02TwoDimArrays/build/
