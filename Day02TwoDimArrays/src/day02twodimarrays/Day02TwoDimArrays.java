@@ -32,9 +32,7 @@ public class Day02TwoDimArrays {
         Scanner console = new Scanner(System.in);
         boolean flag = true;
         int sum=0;
-        int count=0;
         int[] pair = new int[2];
-        //Map<Integer, int[]> combin = new HashMap<Integer, int[]>();
         
         while(flag){
             System.out.println("Please enter the width and length of the array to create, must be 1 or greater: ");
@@ -75,11 +73,7 @@ public class Day02TwoDimArrays {
                             pair[1] = intTwoDimArray[i][j];
                             int sumpair = pair[0]+pair[1];
                             if(isPrime(sumpair)){
-                                //combin.put(count, pair);
-                                //count++;
-                                System.out.println("\npair num 0: " + pair[0]);
-                                System.out.println("pair num 1: " + pair[1]);
-                                System.out.println("sum of pair: " + sumpair);
+                                System.out.println("\npair num 0: " + pair[0] + ", pair num 1: " + pair[1] + ", sum of pair: " + sumpair);
                             }
                         }
                     }
@@ -90,11 +84,7 @@ public class Day02TwoDimArrays {
                             pair[1] = intTwoDimArray[j][i];
                             int sumpair = pair[0]+pair[1];
                             if(isPrime(sumpair)){
-                                //combin.put(count, pair);
-                                //count++;
-                                System.out.println("\npair num 0: " + pair[0]);
-                                System.out.println("pair num 1: " + pair[1]);
-                                System.out.println("sum of pair: " + sumpair);
+                                System.out.println("\npair num 0: " + pair[0] + ", pair num 1: " + pair[1] + ", sum of pair: " + sumpair);
                             }
                         }
                     }
