@@ -1,25 +1,23 @@
-import java.util.NoSuchElementException;
-
-public class LinkedListArrayOfStrings {
+public class LinkedListArray<T> {
 
     private class Container {
         Container next;
-        String value;
+        T value;
     }
 
-    private Container start, end;
+    private Container start;
     private int size;
 
-    public LinkedListArrayOfStrings(){
+    public LinkedListArray(){
         this.start = new Container();
         this.size = 0;
     }
 
-    public void add(String value) {
+    public void add(T value) {
         insertValueAtIndex(size, value);  // add any element in the end of list, e.g. initially 0
     }
 
-    public String getValue(int index) {
+    public T getValue(int index) {
         if(index >= size || index < 0){
             throw new IndexOutOfBoundsException("Index out of Bound");
         }else{
@@ -38,7 +36,7 @@ public class LinkedListArrayOfStrings {
         return temp;
     }
 
-    public void insertValueAtIndex(int index, String value) {
+    public void insertValueAtIndex(int index, T value) {
         Container newCont = new Container();
         newCont.value = value;
 
@@ -87,7 +85,7 @@ public class LinkedListArrayOfStrings {
         }
     }
 
-    public boolean deleteByValue(String value) {
+    public boolean deleteByValue(T value) {
         for(int i=0; i<size; i++){
             if(getValue(i).equals(value)){
                 deleteByIndex(i);
@@ -106,13 +104,13 @@ public class LinkedListArrayOfStrings {
     public String toString() {
         String str="";
         for (int i = 0; i < size; i++) {
-            str += String.format("%s%s%s", i == 0 ? "[" : ", ", getContainer(i).value, i == size-1 ? "]" : "");
+            str += String.format("%s%s%s", i == 0 ? "[" : ", ", getContainer(i).value.toString(), i == size-1 ? "]" : "");
         }
         return str;
     } // comma-separated values list similar to: [5,8,11]
 
-    public String[] toArray() {
-        String[] str= new String[size];
+    public T[] toArray(T[] templateType) {
+        T[] str= (T[])java.lang.reflect.Array.newInstance(templateType.getClass().getComponentType(), size);
         for (int i = 0; i < size; i++) {
             str[i] = getContainer(i).value;
         }

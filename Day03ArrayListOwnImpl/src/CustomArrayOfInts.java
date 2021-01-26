@@ -13,15 +13,11 @@ public class CustomArrayOfInts {
 
     public void add(int value) {
         if (size == data.length){
-            int[] newArray = doubleSizeArray(size);
+            int[] newArray = new int[2 * size];
             copyToNewArray(data, newArray);
             data = newArray;
         }
         insertValueAtIndex(value, size);
-    }
-
-    private int[] doubleSizeArray(int size){
-        return new int[2 * size];
     }
 
     private void copyToNewArray(int[] data, int[] newArray){

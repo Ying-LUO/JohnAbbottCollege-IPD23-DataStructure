@@ -101,7 +101,9 @@ class CustomArrayOfInts_JunitTest {
     public void insertAtIndexOverSize_AssertExceptionThrown(){
         CustomArrayOfInts customArray = new CustomArrayOfInts();
         Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            customArray.insertValueAtIndex(5, 1); });
+            customArray.insertValueAtIndex(5, 1); });  //positive
+        Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+            customArray.insertValueAtIndex(5, -1); });  //negative
 
     }
 
@@ -109,7 +111,9 @@ class CustomArrayOfInts_JunitTest {
     public void getOverSize_AssertExceptionThrown(){
         CustomArrayOfInts customArray = new CustomArrayOfInts();
         Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            customArray.get(3);});
+            customArray.get(3);});  //positive
+        Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+            customArray.get(-3);});  //negative
     }
 
     @Test
@@ -130,7 +134,7 @@ class CustomArrayOfInts_JunitTest {
     @Test
     public void insertAtIndexInSize_AssertSucceed(){
         CustomArrayOfInts customArray = new CustomArrayOfInts();
-        customArray.insertValueAtIndex(5, 0);
+        customArray.insertValueAtIndex(5, 0);  // insert at the beginning
         customArray.add(5);
         customArray.add(5);
         assertEquals(customArray.get(0), 5);  // test get method
