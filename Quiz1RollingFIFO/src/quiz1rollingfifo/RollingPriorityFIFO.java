@@ -152,11 +152,12 @@ public class RollingPriorityFIFO {
                str = "[";
            }
            if(getItem(i).priority == true){
-               str += getItem(i).value+"*";
+               str += getItem(i).value+"*,";
            }else{
-               str +=getItem(i).value;
+               str +=getItem(i).value+",";
            }
-           if(i == this.itemsCurrUsed){
+           if(i == this.itemsCurrUsed-1){
+               str = str.substring(0, str.length()-1);
                str += "]";
            }
        }
