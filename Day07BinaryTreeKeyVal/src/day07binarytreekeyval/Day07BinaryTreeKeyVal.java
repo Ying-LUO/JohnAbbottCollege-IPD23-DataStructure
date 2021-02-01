@@ -17,8 +17,13 @@ public class Day07BinaryTreeKeyVal {
     public static void main(String[] args) {
         // TODO code application logic here
         BinaryTreeStringInt tree = new BinaryTreeStringInt();
+        tree.put("Jerry", 33);
+        tree.put("Eva", 22);
         tree.put("Adam", 11);
-        tree.put("Adam", 11);
+        tree.put("Maria", 43);
+        tree.put("Terry", 3);
+        tree.put("Peter", 67);
+        tree.printAllKeyValPairs();
     }
     
 }

@@ -22,18 +22,14 @@ public class BinaryTreeStringInt {
     }
 
 	Node root;
-    private int nodesCount;
+        private int nodesCount;
 	
 	// throws exception if put attempts to insert a key that already exists (a duplicate)
 	// values may be duplicates but keys may not
     void put(String key, int value) throws IllegalArgumentException {
-        Node newNode = new Node(){
-            this.key = key;
-            this.value = value;
-        };
-        newNode.value = value;
+        
         if(root == null){
-            root = newNode;
+            root = new Node(key, value);
             nodesCount++;
             return;
         }
@@ -47,7 +43,7 @@ public class BinaryTreeStringInt {
             if( key.compareTo(currNode.key) < 0){ // go left branch
                 if(currNode.left ==  null){
                     // found the spot - put it here
-                    currNode.left = new Node(key. value);
+                    currNode.left = new Node(key, value);
                     nodesCount++;
                     return;
                 }else{  // follow to the left
@@ -57,7 +53,7 @@ public class BinaryTreeStringInt {
             }else{  // go right branch
                 if(currNode.right ==  null){
                     // found the spot - put it here
-                    currNode.right = new Node(key. value);
+                    currNode.right = new Node(key, value);
                     nodesCount++;
                     return;
                 }else{  // follow to the right
@@ -76,8 +72,9 @@ public class BinaryTreeStringInt {
         private void printNodeAndAllBelow(Node node){
             
             if(node == null) return;
-            printNodeAndAllBelow(root.left);
+            printNodeAndAllBelow(node.left);  // must change to node, not root!!!!!
             System.out.printf("%s ==> %d%n", node.key, node.value);
-            printNodeAndAllBelow(root.right);
+            printNodeAndAllBelow(node.right);
         }
+            
 }

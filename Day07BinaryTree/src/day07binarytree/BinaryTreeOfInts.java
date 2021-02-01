@@ -12,14 +12,15 @@ import java.util.Iterator;
  * @author ewuzhou
  */                                    // implement diff interface
 public class BinaryTreeOfInts implements Iterable<Integer>{
-                                            // implement diff interface
+                                          // implement diff interface
     class SimpleBinaryTreeIterator implements Iterator<Integer>{
         
         private int[] valuesArray;
         private int currIndex; // current position in the array
         
-        SimpleBinaryTreeIterator(){
-            this.valuesArray = getValuesInOrder();
+        SimpleBinaryTreeIterator(int[] valuesArray){
+            //this.valuesArray = getValuesInOrder();
+            this.valuesArray = valuesArray;
         }
         
         @Override
@@ -37,7 +38,8 @@ public class BinaryTreeOfInts implements Iterable<Integer>{
     
     @Override
     public Iterator<Integer> iterator() {
-        return new SimpleBinaryTreeIterator();
+        //return new SimpleBinaryTreeIterator();
+        return new SimpleBinaryTreeIterator(getValuesInOrder());
     }
     
     private class NodeOfInt {
