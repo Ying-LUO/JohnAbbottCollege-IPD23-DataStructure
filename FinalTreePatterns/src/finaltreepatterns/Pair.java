@@ -3,12 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package day07binarytree;
+package finaltreepatterns;
 
-/**
- *
- * @author ewuzhou
- */
 public class Pair<K, V> {
     public K key;
     public V value;
@@ -17,4 +13,13 @@ public class Pair<K, V> {
             this.key = key;
             this.value = value;
         }
+
+    Pair left;
+    Pair right;
+    
+    @Override
+    public String toString() {
+        return String.format("(%s=>%s)", key.toString(), value.toString());
+    }
+    
 }
