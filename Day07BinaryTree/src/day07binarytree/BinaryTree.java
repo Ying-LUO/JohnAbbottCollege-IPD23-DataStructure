@@ -99,8 +99,7 @@ public class BinaryTree<K extends Comparable, V> implements Iterable<Pair<K, V>>
     public V getValueByKey(K key) throws RuntimeException{
         
         // logically pairsCount == arrayOfPairs.length
-        // TODO:CHANGE arrayOfPairs to getValuesInOrder()
-        for(int i=0; i< arrayOfPairs.length; i++){
+        for(int i=0; i< getValuesInOrder().length; i++){
             if(arrayOfPairs[i].key.equals(key)){
                 return (V)arrayOfPairs[i].value;
             }

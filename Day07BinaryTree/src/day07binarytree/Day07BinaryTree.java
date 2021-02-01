@@ -51,7 +51,7 @@ public class Day07BinaryTree{
             System.out.printf("%d => %s\n", pair.key, pair.value);
         }
         
-        System.out.printf("Get Value by Key%n%d => %s\n", 67, genericTree.getValueByKey(67));
+        System.out.printf("Get Value by Key%n%d => %s\n", 11, genericTree.getValueByKey(11));
         
     }
     
